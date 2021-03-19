@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Layout from '../core/Layout'
 import { Link } from 'react-router-dom'
 import {signup} from '../auth'
+import './signup.css';
 
 
 
@@ -44,27 +45,54 @@ const Signup = () => {
  
 
     const signUpForm = () => (
-        <form>
-            <div className='form-group'>
-                <label className='text-muted'>Name</label>
-                <input onChange={handleChange('name')} type='text' className='form-control'
-                value={name} />
-            </div>
+        // <form>
+        //     <div className='form-group'>
+        //         <label className='text-muted'>Name</label>
+        //         <input onChange={handleChange('name')} type='text' className='form-control'
+        //         value={name} />
+        //     </div>
 
-            <div className='form-group'>
-                <label className='text-muted'>Email</label>
-                <input onChange={handleChange('email')} type='email' className='form-control'
-                value={email} />
-            </div>
+        //     <div className='form-group'>
+        //         <label className='text-muted'>Email</label>
+        //         <input onChange={handleChange('email')} type='email' className='form-control'
+        //         value={email} />
+        //     </div>
             
-            <div className='form-group'>
-                <label className='text-muted'>Password</label>
-                <input onChange={handleChange('password')} type='password' className='form-control' 
-                value={password}/>
-            </div>
+        //     <div className='form-group'>
+        //         <label className='text-muted'>Password</label>
+        //         <input onChange={handleChange('password')} type='password' className='form-control' 
+        //         value={password}/>
+        //     </div>
 
-            <button onClick={clickSubmit} className ='btn btn primary'>Submit</button>
-        </form>
+        //     <button onClick={clickSubmit} className ='btn btn primary'>Submit</button>
+        // </form>
+        <form>
+        <div className="form-group">
+           <input type="text" name="name" onChange={handleChange('name')} value={name} className="form-control my-input" id="name" placeholder="Name" />
+        </div>
+        <div className="form-group mt-3">
+           <input type="email" name="email" onChange={handleChange('email')} className="form-control my-input"  value={email} id="email" placeholder="Email"/>
+        </div>
+        <div className="form-group mt-3">
+           <input type="password" min="0" name="password" onChange={handleChange('password')} value={password} id="password"  className="form-control my-input" placeholder="password"/>
+        </div>
+        <div className="text-center mt-2">
+           <button  onClick={clickSubmit} className=" btn btn-block send-button tx-tfm">Create Your Free Account</button>
+        </div>
+        <div className="col-md-12 ">
+           <div className="login-or">
+              <hr className="hr-or"/>
+              <span className="span-or">or</span>
+           </div>
+        </div>
+        <div className="form-group">
+           <Link to="#" className="btn btn-block g-button">
+           <i className="fa fa-google"></i> Sign up with Google
+           </Link>
+        </div>
+        <p className="small mt-3">By signing up, you are indicating that you have read and agree to the <Link to="#" className="ps-hero__content__link">Terms of Use</Link> and <Link to="#">Privacy Policy</Link>.
+        </p>
+     </form>
     )
     const errorMessage = () =>(
         <div className='alert alert-danger' style={{display: error ? '' : 'none'}}>
@@ -89,4 +117,4 @@ const Signup = () => {
     )
 }
 
-export default  Signup
+export default  Signup;

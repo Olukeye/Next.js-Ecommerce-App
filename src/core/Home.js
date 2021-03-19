@@ -3,7 +3,7 @@ import Layout from './Layout'
 
 const Home = () => (
     <Layout title='Home Page' 
-    description='E-commerce Node-React App'>
+    description='Fashion Store'>
         ...
     </Layout>
 )
