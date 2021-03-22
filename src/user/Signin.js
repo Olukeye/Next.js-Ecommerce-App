@@ -23,15 +23,16 @@ const Signin = () => {
     
     const clickSubmit = event => {
        event.preventDefault();
-       setValues({ ...values, error: false, loading:true })
+       setValues({ ...values, error: false, loading: true })
        signin({ email, password }).then(data  => {
            if(data?.error) {
                setValues({ ...values, error: data.error, loading: false });
            } else {
+            //when the user signin successfully , it redirect them to their dashboard
                authenticate(data, () => {
                    setValues({
                    ...values,
-                   redirectToReferrer:true
+                   redirectToReferrer: true
                    })
                })
            }
@@ -77,7 +78,7 @@ const Signin = () => {
             if(user && user.role === 1) {
                 return <Redirect to='/admin/dashboard' />
             } else{
-                return <Redirect to="/user/Dashboard" />
+                return <Redirect to="/user/dashboard" />
             }
         }
     };

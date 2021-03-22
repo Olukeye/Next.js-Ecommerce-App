@@ -95,7 +95,7 @@ const Menu =({history}) => {
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="mr-auto">
                                 <Nav.Link style={isActive(history,'/')} href="/">Home</Nav.Link>
-                                <Nav.Link style={isActive(history,'/contact')} href="/about-us">Contact Us</Nav.Link>
+                                <Nav.Link style={isActive(history,'/dashboard')} href="/user/dashboard">Dashboard</Nav.Link>
                                 <Nav.Link style={isActive(history,'/About')} href="/contact-us">About Us</Nav.Link>
                                 <Nav.Link style={isActive(history,'/signup')} href="/signup">Sign up</Nav.Link>
                                 <Nav.Link style={isActive(history,'/signin')} href="/signin">Sign in</Nav.Link>

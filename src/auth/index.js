@@ -1,8 +1,6 @@
 import {API} from '../config'
 
-
-
-
+// register user method ti the backend
 export const signup = user => {
     return fetch(`${API}/signup`, {
         method: 'POST',
@@ -20,6 +18,7 @@ export const signup = user => {
     })
 }
 
+// login user to the app
 export const signin = user => {
     return fetch(`${API}/signin`, {
         method: 'POST',
@@ -43,6 +42,7 @@ export const authenticate= (data, next) => {
     }
 }
 
+// log out user from the app
 export const signout = next => {
     if(typeof window !== 'undefined') {
         localStorage.removeItem('jwt');
