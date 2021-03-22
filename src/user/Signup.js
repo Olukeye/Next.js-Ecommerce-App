@@ -110,8 +110,8 @@ const Signup = () => {
         <Layout title='Signup Page' description='Signup to E-commerce Node-React App'
          className='container col-md-6 offset-md-3'>
              
-             {errorMessage()}
-             {successMessage()}
+            {errorMessage()}
+            {successMessage()}
             {signUpForm()}
         </Layout>
     )
