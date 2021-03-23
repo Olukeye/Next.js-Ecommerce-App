@@ -29,12 +29,12 @@ const Signin = () => {
                setValues({ ...values, error: data.error, loading: false });
            } else {
             //when the user signin successfully , it redirect them to their dashboard
-               authenticate(data, () => {
-                   setValues({
-                   ...values,
-                   redirectToReferrer: true
-                   })
-               })
+                authenticate(data, () => {
+                setValues({
+                    ...values,
+                    redirectToReferrer: true
+                });
+            })
            }
        })
     }
@@ -78,7 +78,7 @@ const Signin = () => {
             if(user && user.role === 1) {
                 return <Redirect to='/admin/dashboard' />
             } else{
-                return <Redirect to="/user/dashboard" />
+                return <Redirect to="/" />
             }
         }
     };

@@ -71,9 +71,10 @@
 
 // export default withRouter(Menu);
 
-import React from 'react';
+import React, { Fragment}  from 'react';
 import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap'
-import { withRouter} from 'react-router-dom';
+import { Link, withRouter} from 'react-router-dom';
+import { signout, isAuthenticated } from '../auth';
 
 const Menu =({history}) => {
     // ....navlink should be active with color
@@ -95,10 +96,46 @@ const Menu =({history}) => {
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="mr-auto">
                                 <Nav.Link style={isActive(history,'/')} href="/">Home</Nav.Link>
-                                <Nav.Link style={isActive(history,'/dashboard')} href="/user/dashboard">Dashboard</Nav.Link>
-                                <Nav.Link style={isActive(history,'/About')} href="/contact-us">About Us</Nav.Link>
-                                <Nav.Link style={isActive(history,'/signup')} href="/signup">Sign up</Nav.Link>
-                                <Nav.Link style={isActive(history,'/signin')} href="/signin">Sign in</Nav.Link>
+                                <li className='nav-item'>
+                                    <Link
+                                        className='nav-link' style={isActive(history, '/user/dashboard')} 
+                                        to='/user/dashboard'>
+                                        Dashboard
+                                    </Link>
+                                </li>
+
+                                {!isAuthenticated() && (
+                                        <Fragment >
+                                        <li className='nav-item'>
+                                            <Nav.Link  className='nav-link' 
+                                            style={isActive(history, '/signin')} 
+                                            href='/signin'>Signin</Nav.Link >
+                                        </li>
+
+                                        <li className='nav-item'>
+                                        <Nav.Link  className='nav-link'
+                                            style={isActive(history, '/signup')}
+                                           href ='/signup'>Signup</Nav.Link >
+                                        </li>
+                                        </Fragment>
+                                        )}
+                                         {isAuthenticated() && (
+                                             <Fragment>
+                                        <li className='nav-item'>
+                                            <span 
+                                            className='nav-link'
+                                            style={{cursor:'pointer', color:'#ffffff'}}
+                                            onClick={() => 
+                                                signout(() => {
+                                                    history.push("/");
+                                                })
+                                            }
+                                                >
+                                                    Signout
+                                            </span>
+                                        </li>
+                                        </Fragment>
+                                        )}
                                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                                     <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
