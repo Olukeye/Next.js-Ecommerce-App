@@ -97,11 +97,9 @@ const Menu =({history}) => {
                                 <Nav className="mr-auto">
                                 <Nav.Link style={isActive(history,'/')} href="/">Home</Nav.Link>
                                 <li className='nav-item'>
-                                    <Link
-                                        className='nav-link' style={isActive(history, '/user/dashboard')} 
-                                        to='/user/dashboard'>
-                                        Dashboard
-                                    </Link>
+                                            <Nav.Link  className='nav-link' 
+                                            style={isActive(history, '/user/profile')} 
+                                            href='/user/profile'>Profile</Nav.Link >
                                 </li>
 
                                 {!isAuthenticated() && (

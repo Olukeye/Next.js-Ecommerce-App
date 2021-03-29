@@ -14,7 +14,7 @@ const Signin = () => {
     })
 
     const {email, password, error, loading, redirectToReferrer } = values;
-    const { user } = isAuthenticated()
+    const { user } = isAuthenticated();
 
     const handleChange = name => event => {
         setValues({...values, error:false, [name]: event.target.value});
@@ -76,9 +76,9 @@ const Signin = () => {
     const redirectUser = () => {
         if(redirectToReferrer) {
             if(user && user.role === 1) {
-                return <Redirect to='/admin/dashboard' />
+                return <Redirect to='/admin/dashboard' />;
             } else{
-                return <Redirect to="/" />
+                return <Redirect to="/user/profile" />;
             }
         }
     };
