@@ -5,7 +5,7 @@ import {isAuthenticated} from '../auth';
 
 const Profile = () => {
 
-    const {user: {__id, name, email, role}} = isAuthenticated();
+    const {user: { name, email, role}} = isAuthenticated();
     return  (
 
         <Layout title='Profile Page' 

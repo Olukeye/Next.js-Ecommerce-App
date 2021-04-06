@@ -17,13 +17,13 @@ const Signin = () => {
     const { user } = isAuthenticated();
 
     const handleChange = name => event => {
-        setValues({...values, error:false, [name]: event.target.value});
+        setValues({ ...values, error:false, [name]: event.target.value});
     };
 
     
     const clickSubmit = event => {
        event.preventDefault();
-       setValues({ ...values, error: false, loading: true })
+       setValues({ ...values, error: false, loading: true });
        signin({ email, password }).then(data  => {
            if(data?.error) {
                setValues({ ...values, error: data.error, loading: false });
@@ -78,7 +78,7 @@ const Signin = () => {
             if(user && user.role === 1) {
                 return <Redirect to='/admin/dashboard' />;
             } else{
-                return <Redirect to="/user/profile" />;
+                return <Redirect to="/profile" />;
             }
         }
     };
