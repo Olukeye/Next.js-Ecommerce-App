@@ -23,26 +23,28 @@ const Menu = ({history}) => {
                                 <Navbar.Collapse id="basic-navbar-nav">
                                     <Nav className="mr-auto">
                                     <Nav.Link style={isActive(history,'/')} href="/">Home</Nav.Link>
-                                    <Nav.Link style={isActive(history,'/profile')} href="/profile">Profile</Nav.Link>
+
+                                    {/* if is not admin, redirect to its profile/dashboard */}
+                                    {isAuthenticated() && isAuthenticated().user.role === 0 && (
+                                      <Nav.Link style={isActive(history,'/profile')} href="/profile">Profile</Nav.Link>
+                                    )}
+
+                                    {/* is if its an admin, after login should be redirected to admin dashboard */}
+                                    {isAuthenticated() && isAuthenticated().user.role === 1 && (
+                                      <Nav.Link style={isActive(history,'/adminprofile')} href="/adminprofile">Profile</Nav.Link>
+                                    )}
+
                                     {!isAuthenticated() && (
                                         <Fragment>
                                                <Nav.Link style={isActive(history, '/signin')} href="/signin">Signin</Nav.Link>
                                                <Nav.Link style={isActive(history, '/signup')} href="/signup">Signup</Nav.Link>
                                         </Fragment>
                                     )}
+
                                     {isAuthenticated() && (
                                                 <li className='nav-item'>
-                                                    <span
-                                                    className='nav-link'
-                                                    style={{cursor:'pointer', color:'#ffffff'}}
-                                                    onClick={() => 
-                                                        signout(() => {
-                                                            history.push("/");
-                                                        })
-                                                    }
-                                                        >
-                                                            Signout
-                                                    </span>
+                                                    <span className='nav-link' style={{cursor:'pointer', color:'#ffffff'}} onClick={() => 
+                                                        signout(() => { history.push("/"); }) }>Signout</span>
                                                 </li>
                                     )} 
                                     <NavDropdown title="Dropdown" id="basic-nav-dropdown">

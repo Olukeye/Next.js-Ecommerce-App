@@ -14,7 +14,7 @@ const AdminProfile = () => {
                 <h4 className="card-header">Links</h4>
                 <ul className="list-group">
                     <li className="list-group-item">
-                        <Link className="nav-link" to="/create/category">Add Category</Link>
+                        <Link className="nav-link" to="/Addcategory">Add Category</Link>
                     </li>
                     <li className="list-group-item">
                         <Link className="nav-link" to="/create/products">Add Product</Link>
