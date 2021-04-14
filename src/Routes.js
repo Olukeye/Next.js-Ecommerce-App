@@ -8,12 +8,7 @@ import Profile from './user/Profile';
 import AdminProfile from './user/AdminProfile';
 import AdminRoute from './auth/AdminRoute';
 import Addcategory from './AdminFolder/Addcategory';
-
-
-
-
-
-
+import AddProduct from './AdminFolder/AddProduct';
 
 const Routes = () => {
     return (
@@ -25,6 +20,8 @@ const Routes = () => {
                 <PrivateRoute path="/profile" exact component={Profile} />
                 <AdminRoute path="/adminprofile" exact component={AdminProfile} />
                 <AdminRoute path="/addcategory" exact component={Addcategory} />
+                <AdminRoute path="/addproduct" exact component={AddProduct} />
+
             </Switch>
         </BrowserRouter>
     )

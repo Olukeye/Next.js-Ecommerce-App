@@ -17,7 +17,7 @@ const AdminProfile = () => {
                         <Link className="nav-link" to="/Addcategory">Add Category</Link>
                     </li>
                     <li className="list-group-item">
-                        <Link className="nav-link" to="/create/products">Add Product</Link>
+                        <Link className="nav-link" to="/Addproduct">Add Product</Link>
                     </li>
                 </ul>
             </div>
