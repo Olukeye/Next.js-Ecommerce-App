@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Layout from './Layout'
 import {  getProducts } from './apiCore';
 import Card from './Card'
+import './card.css'
 
 
 const Home = () => {
@@ -38,15 +39,23 @@ useEffect(() => {
 
 
   return (
-    <Layout title='Home Page' description='Fashion Store' className="container-fluid">
+    <Layout title='Home Page' description='Fashion Store' className="container">
+      <div id="toast"></div>
+    <div id="toast-cart"></div>
     <h2 className="mb-4">Best Sales</h2>
+    <hr/>
+      <br/>
     < div className="row">
     {productsBySell.map((product, i) => (
       <Card key={i} product={product} />
     ))}
     </div>
     
+    <div id="toast"></div>
+    <div id="toast-cart"></div>
     <h2 className="mb-4">Best Sales</h2>
+    <hr/>
+  <br/>
     < div className="row">
     {productsByArrival.map((product, i) => (
       <Card key={i} product={product} />
