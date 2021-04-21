@@ -51,8 +51,8 @@ useEffect(() => {
     ))}
     </div>
     
-    <div id="toast"></div>
-    <div id="toast-cart"></div>
+    {/* <div id="toast"></div>
+    <div id="toast-cart"></div> */}
     <h2 className="mb-4">Best Sales</h2>
     <hr/>
   <br/>
