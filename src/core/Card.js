@@ -7,17 +7,16 @@ const Card = ({product}) => {
     return (
         <div className="col-lg-4 mb-4">
             <div className="card">
-                {/* <div className="card-header">{product.name}</div> */}
+            <div className="card-header">{product.name}</div>
                 <span id="heart" className="heart"><i className="fas fa-heart"></i></span>
                     <Images item={product} url="product" className="first-image" />
                     <div className="card-body" style={{width: '18rem'}}>
-                    <a href="#" ><center>Add to cart</center></a>
-                    <hr/>
-                    <center>
-                   <div className="card-header">{product.name}</div>
-                    <p>{product.description}</p>
+                    <Link to="#" >
+                       <center>View Product</center>
+                    </Link>
+                   <hr/>
+                    <p>{product.description.substring(0, 50)}</p>
                     <p>${product.price}</p>
-                    </center>
                 </div> 
                 </div>
             </div>
