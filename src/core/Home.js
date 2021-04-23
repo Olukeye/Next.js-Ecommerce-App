@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Layout from './Layout'
 import {  getProducts } from './apiCore';
-import Card from './Card'
-import './card.css'
+import Card from './Card';
+import './card.css';
+import Search from './Search';
 
 
 const Home = () => {
@@ -40,6 +41,8 @@ useEffect(() => {
 
   return (
     <Layout title='Home Page' description='Fashion Store' className="container">
+      <Search />
+
       <div id="toast"></div>
     <div id="toast-cart"></div>
     <h2 className="mb-4">Best Sales</h2>

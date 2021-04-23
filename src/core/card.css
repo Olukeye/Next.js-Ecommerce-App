@@ -110,6 +110,10 @@ h1 {
   color: #c50707;
 }
 
+.btn {
+  color: #71b280;
+}
+
 #toast,
 #toast-cart {
   padding: 10px;

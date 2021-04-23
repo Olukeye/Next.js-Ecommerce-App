@@ -60,11 +60,10 @@ const Shop = () => {
            if(size > 0 || size >= limit) {
                return (
                 <button onClick={loadProducts} className="btn 
-                btn-warning mb-5">Load More </button>
+                 mb-5">Load More </button>
                )
            }
-   }
-
+        }
 
        useEffect(() => {
         init();
@@ -87,13 +86,11 @@ const Shop = () => {
     return (
         <Layout title='Home Page' description='Fashion Store' className="container-fluid">
          <div className="row">
-
          <div className="col-4 mb-4">
                  <ul>
                  <Checkbox categories={categories} handleFilters={filters => handleFilters(filters, 'category')} />
                  </ul>
              </div>
-
               <div className="col-8">
                   <div className="row">
                      {filteredResults.map((product, i) => (
