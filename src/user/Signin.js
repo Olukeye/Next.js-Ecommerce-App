@@ -56,7 +56,7 @@ const Signin = () => {
                 value={password}/>
             </div>
 
-            <button onClick={clickSubmit} className ='btn btn primary'>Submit</button>
+            <button onClick={clickSubmit} className ='btn btn-secondary'>Submit</button>
         </form>
     )
     const errorMessage = () =>(

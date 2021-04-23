@@ -42,7 +42,6 @@ useEffect(() => {
   return (
     <Layout title='Home Page' description='Fashion Store' className="container">
       <Search />
-
       <div id="toast"></div>
     <div id="toast-cart"></div>
     <h2 className="mb-4">Best Sales</h2>

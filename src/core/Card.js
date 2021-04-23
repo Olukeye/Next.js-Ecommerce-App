@@ -12,7 +12,7 @@ const Card = ({product}) => {
                     <Images item={product} url="product" className="first-image" />
                     <div className="card-body" style={{width: '18rem'}}>
                     <Link to="#" >
-                       <center>View Product</center>
+                    <center><button className="btn btn-outline-primary mt-2 mb-2">View Product</button></center> 
                     </Link>
                    <hr/>
                     <p>{product.description.substring(0, 50)}</p>

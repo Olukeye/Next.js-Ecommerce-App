@@ -20,11 +20,11 @@ const Menu = ({history}) => {
         <div className="row">
             <div className="col-md-12">
                     <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
-                        <Navbar.Brand href="#home">VEVI</Navbar.Brand>
+                        <Navbar.Brand  className="ml-3" href="#home">VEVI</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className="mr-auto">
-                            <Nav.Link style={isActive(history,'/')} href="/">Home</Nav.Link>
+                            <Nav className="ml">
+                            <Nav.Link style={isActive(history,'/')} href="/"><i className="fas fa-home"></i></Nav.Link>
 
                             {/* if is not admin, redirect to its profile/dashboard */}
                             {isAuthenticated() && isAuthenticated().user.role === 0 && (
@@ -57,11 +57,6 @@ const Menu = ({history}) => {
                                 <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                             </NavDropdown>
                             </Nav>
-                            {/* <Form inline > */}
-                            {/* <FormControl type="search" placeholder="Search Product" className="mr-sm-2"> */}
-                            {/* <Button variant="outline-success">Search</Button> */}
-                            {/* </FormControl> */}
-                            {/* </Form>  */}
                             </Navbar.Collapse>
                     </Navbar>
                 </div>

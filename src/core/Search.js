@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import {  getCategories, list } from './apiCore';
 import Card from './Card'
+import './search.css'
+
 
 const Search = () => {
     const [data, setData] = useState({
@@ -54,25 +56,64 @@ const Search = () => {
 
     const searchForm = () => (
         <form onSubmit={searchSubmit}>
-            <span className="input-group-text  ml-3"  >
+            {/* <span className="input-group-text  ml-3"  > */}
                 {/* <div className="input-group ">
                     </div> */}
-                    <input type="search" className="form-control"
+                    {/* <input type="search" className="form-control"
                     onChange={handleChange("search")}
                     placeholder="Search Product"/>
         
                 <div className="btn input-group-append" style={{border : 'none'}}>
                     <button className="input-group-text">Search</button>
                 </div>
-            </span>
+            </span> */}
+        <div className="container h-100">
+            <div className="d-flex justify-content-center h-100">
+                <div className="searchbar">
+                <input className="search_input" 
+                onChange={handleChange("search")} type="text" name="" placeholder="Search..." />
+                <a href="#" className="search_icon"><i className="fas fa-search"></i></a>
+                </div>
+            </div>
+            </div>
         </form>
      );
-     
+
+    //  feedback if product is found || not found!
+    const feedbackMessage = (serached, results) => {
+        if(serached && results.length > 0) {
+            return `Found  ${results.length} products`;
+        }
+        if(searched && results.length < 1) {
+            return `Product not found!`;
+        }
+    }
+
+    //  search for products in the backend and populate it on the home page 
+     const searchProducts = (results = []) => {
+         return (
+            <div>
+                <h6 className="mt-4 mb-4">
+                    {feedbackMessage(searched, results)}
+                </h6>
+                 <div className="row">
+                 {results.map((product, i) => (
+                     <Card key={i} product={product} />
+                 ))}
+             </div>
+            </div>
+         )
+     }
+
+
      return (
       <div className="row">
           <div className="container mb-3">{searchForm()}</div>
-          {JSON.stringify(results)}
+          <div className="container-fluid mb-3">
+          {searchProducts(results)}
+          </div>
       </div>   
+      
      )
 }
 
