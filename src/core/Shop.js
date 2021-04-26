@@ -94,8 +94,9 @@ const Shop = () => {
               <div className="col-8">
                   <div className="row">
                      {filteredResults.map((product, i) => (
-                    <Card key={i} product={product} />
-                        ))}
+                            <Card key={i} product={product} />
+                         
+                     ))}
                   </div>
                   <hr/>
                   {loadProductsButton ()}

@@ -42,25 +42,20 @@ useEffect(() => {
   return (
     <Layout title='Home Page' description='Fashion Store' className="container">
       <Search />
-      <div id="toast"></div>
-    <div id="toast-cart"></div>
     <h2 className="mb-4">Best Sales</h2>
     <hr/>
       <br/>
     < div className="row">
     {productsBySell.map((product, i) => (
-      <Card key={i} product={product} />
+        <Card key={i} product={product} />
     ))}
     </div>
-    
-    <div id="toast"></div>
-    <div id="toast-cart"></div>
     <h2 className="mb-4">Best Sales</h2>
     <hr/>
   <br/>
     < div className="row">
     {productsByArrival.map((product, i) => (
-      <Card key={i} product={product} />
+       <Card key={i} product={product} />
     ))}
     </div>
   </Layout>

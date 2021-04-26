@@ -67,9 +67,8 @@ const Category = () => {
 
     // return button
     const goBack = () => (
-        <div className="mt-5">
-            <Link to="/adminprofile"  className="
-            text-warning">back</Link>
+        <div className="mt-3">
+            <Link to="/adminprofile" style={{color: "#780206"}}>back</Link>
         </div>
     )
 

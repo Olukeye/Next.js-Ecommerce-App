@@ -56,17 +56,6 @@ const Search = () => {
 
     const searchForm = () => (
         <form onSubmit={searchSubmit}>
-            {/* <span className="input-group-text  ml-3"  > */}
-                {/* <div className="input-group ">
-                    </div> */}
-                    {/* <input type="search" className="form-control"
-                    onChange={handleChange("search")}
-                    placeholder="Search Product"/>
-        
-                <div className="btn input-group-append" style={{border : 'none'}}>
-                    <button className="input-group-text">Search</button>
-                </div>
-            </span> */}
         <div className="container h-100">
             <div className="d-flex justify-content-center h-100">
                 <div className="searchbar">
@@ -110,7 +99,7 @@ const Search = () => {
       <div className="row">
           <div className="container mb-3">{searchForm()}</div>
           <div className="container-fluid mb-3">
-          {searchProducts(results)}
+            {searchProducts(results)}
           </div>
       </div>   
       
