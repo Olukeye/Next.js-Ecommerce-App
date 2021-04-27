@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Layout from './Layout'
-import { read, listRelated } from './apiCore'
+import { read, listRelated, getProducts } from './apiCore'
 import './card.css';
 import { Link } from 'react-router-dom';
 import Card from './Card'
@@ -54,52 +54,26 @@ const Viewedproduct = (props, { showViewedProductButton = true}) => {
 
     return (
         <Layout title={product && product.name} 
+        description={
+            product && product.description && 
+            product.description.substring(0, 50)
+        }
           className="container">
-{/* 
+
             <div className="row">
-                <div className="col-8 " className="fixed">
+                <div className="col-8">
                     {product && product.description && (
                         <Card product={product} 
                         showViewedProductButton={false} />
                         )}
                 </div>
-
                 <div className="col-4">
                     <h4>Related Products</h4><hr/>
                   {relatedProduct.map((p, i)=> (
                       <Card key={i} product={p} />
                   ))}
                   </div>
-            </div> */}
-
-            <div className="row">
-                <div className="col-4">        
-    <div className="card">
-        <div className="card-header">{product.name}</div>
-                <span id="heart" className="heart"><i className="fa fa-heart"></i></span>
-                    <Images item={product} url="product" className="first-image" />
-                    <div className="card-body" style={{width: '18rem'}}>
-                    <Link to={`/viewedproduct/${product._id}`} >  
-                        {stock(product.quantity)}
-                    </Link>
-                <hr/>
-                    <p className="lead mt-2">{product.description}</p>
-                <div>
-                <p className="9">${product.price}
-                <span style={{float: 'right'}}>
-                {cartButton()}
-            </span>
-                </p>
-            </div>
-            </div>
-        </div> 
-   </div> 
-
-                    <div className="col-8">
-                
-                        <h1> hey there</h1>
-                    </div>
-            </div>
+            </div>    
       </Layout>
       )
 }

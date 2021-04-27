@@ -47,15 +47,22 @@ useEffect(() => {
       <br/>
     < div className="row">
     {productsBySell.map((product, i) => (
+      <div className="col-4 mb-4">
         <Card key={i} product={product} />
+      </div>
     ))}
     </div>
-    <h2 className="mb-4">Best Sales</h2>
+    
+    <div id="toast"></div>
+    <div id="toast-cart"></div>
+    <h2 className="mb-4 mt-5">New Arrivals</h2>
     <hr/>
   <br/>
     < div className="row">
     {productsByArrival.map((product, i) => (
+       <div className="col-4 mb-4">
        <Card key={i} product={product} />
+     </div>
     ))}
     </div>
   </Layout>
