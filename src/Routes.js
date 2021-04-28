@@ -11,6 +11,7 @@ import AdminRoute from './auth/AdminRoute';
 import Addcategory from './AdminFolder/Addcategory';
 import AddProduct from './AdminFolder/AddProduct';
 import Viewedproduct from './core/Viewedproduct';
+import Cart from './core/Cart'
 
 
 const Routes = () => {
@@ -21,6 +22,7 @@ const Routes = () => {
                 <Route path="/shop" exact component={Shop} />  
                 <Route path="/signin" exact component={Signin} />
                 <Route path="/signup" exact component={Signup} />
+                <Route path="/cart" exact component={Cart} />
                 <Route path="/viewedproduct/:productId" exact component={Viewedproduct} />
                 <PrivateRoute path="/profile" exact component={Profile} />
                 <AdminRoute path="/adminprofile" exact component={AdminProfile} />

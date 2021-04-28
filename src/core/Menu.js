@@ -2,6 +2,8 @@ import React, { Fragment,  useEffect, useState }  from 'react';
 import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap';
 import { withRouter} from 'react-router-dom';
 import { signout, isAuthenticated } from '../auth';
+import {totalItem} from './cartHelpers';
+import './card.css'
 
 
 const Menu = ({history}) => { 
@@ -54,6 +56,7 @@ const Menu = ({history}) => {
                                 <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                             </NavDropdown>
                             </Nav>
+                            <Nav.Link style={isActive(history,'/cart')} href="/cart"><i className="fa fa-shopping-cart"></i>{totalItem()}</Nav.Link>
                             </Navbar.Collapse>
                     </Navbar>
                 </div>
