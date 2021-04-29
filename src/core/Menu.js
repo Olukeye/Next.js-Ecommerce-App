@@ -18,11 +18,11 @@ const Menu = ({history}) => {
     return(
         <div className="row" >
             <div className="col-md-12">
-                    <Navbar bg="dark"  variant="dark" className="fixed-top" expand="lg" sticky="top-">
+                    <Navbar bg="dark" float="left" variant="dark" className="fixed-top" expand="lg" sticky="top">
                         <Navbar.Brand  className="" href="#home">VEVI</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className="ml">
+                            <Nav className="ml-auto">
                             <Nav.Link style={isActive(history,'/')} href="/"><i className="fas fa-home"></i></Nav.Link>
 
                             {/* if is not admin, redirect to its profile/dashboard */}
@@ -48,15 +48,16 @@ const Menu = ({history}) => {
                                         signout(() => { history.push("/"); }) }>Signout</span>
                                 </li>
                             )} 
-                            <NavDropdown title="Category"  id="basic-nav-dropdown">
+                             <Nav.Link style={isActive(history,'/shop')} href="/shop">Store</Nav.Link>
+                            <Nav.Link style={isActive(history,'/cart')} href="/cart"><i className="fa fa-shopping-cart"></i>{totalItem()}</Nav.Link>
+                            {/* <NavDropdown title="Category"  id="basic-nav-dropdown">
                                 <NavDropdown.Item  href="/shop">Shop</NavDropdown.Item>
                                 <NavDropdown.Item  href="#action/3.2">Men</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.3">Women</NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                            </NavDropdown>
+                            </NavDropdown> */}
                             </Nav>
-                            <Nav.Link style={isActive(history,'/cart')} href="/cart"><i className="fa fa-shopping-cart"></i>{totalItem()}</Nav.Link>
                             </Navbar.Collapse>
                     </Navbar>
                 </div>

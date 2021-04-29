@@ -1,4 +1,6 @@
-// Add item function
+// *********** CRUD **************
+
+//1) Add item function
 export const addItem = (item, next) => {
     let cart = []
     if(typeof window !== 'undefined') {
@@ -42,3 +44,38 @@ export const getCart = () => {
     }
     return [];
 };
+
+//2) Update the Cart
+export const updateItem = (productId, count) => {
+    let cart = [];
+    if(typeof window !== 'undefined') {
+        if(localStorage.getItem('cart')) {
+            cart = JSON.parse(localStorage.getItem('cart'));
+        }
+        // map through
+        cart.map((product, i) => {
+            if(product._id === productId) {
+                cart[i].count = count;
+            }
+        });
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+}
+
+//3) Delete Cart
+export const deleteItem = (productId) => {
+    let cart = [];
+    if(typeof window !== 'undefined') {
+        if(localStorage.getItem('cart')) {
+            cart = JSON.parse(localStorage.getItem('cart'));
+        }
+        // map through
+        cart.map((product, i) => {
+            if(product._id === productId) {
+                cart.splice(i, 1) //Delete just one item from the array of product
+            }
+        });
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+    return cart;
+}

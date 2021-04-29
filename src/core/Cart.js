@@ -3,14 +3,17 @@ import Layout from './Layout'
 import {getCart } from './cartHelpers';
 import { Link} from 'react-router-dom';
 import Card from './Card';
+import Checkout from './Checkout'
 
 
-const Cart = ( { showViewedProductButton = true}) => {
+
+
+const Cart = ( ) => {
     const [items, setItems] = useState([])
 
     useEffect(() => {
         setItems(getCart())
-    }, [])
+    }, [{items}]);
 
     const showCartItems = items => {
         return (
@@ -18,12 +21,17 @@ const Cart = ( { showViewedProductButton = true}) => {
                 <h2>You have {`${items.length}`} item in your cart</h2>
                 <hr/>
                 {items.map((product, i) => (
-                <Card key={i} product={product} 
-                showAddToCartButton={false} />
+                < Card key={i} product={product} 
+                    showAddToCartButton={false}
+                    cartUpdate={true} 
+                    deleteButton={true}
+                /> 
                 ))}
             </div>
         )
     }
+
+    
 
     const emptyCart = () => (
         <h2>
@@ -33,16 +41,17 @@ const Cart = ( { showViewedProductButton = true}) => {
     )
     return (
         <Layout title='Shopping Cart' description='Your Cart is Ready' className="container">
-           <div className="row">
-           <div className="col-8 mb-4">
-               {items.length > 0 ? showCartItems(items) : emptyCart()}
-           </div>
-              <div className="col-4">
-                  <div className="row">
-                    <p>show other options</p>
-                  </div>
-             </div>
-         </div>
+        <div className="row">
+            <div className="col-8 mb-4">
+                {items.length > 0 ? showCartItems(items) : emptyCart()}
+            </div>
+        
+            <div className="col-4">
+                <h4 className="">your checkOut</h4>
+                <hr/>
+                <Checkout products={items} />
+            </div>
+        </div>
         </Layout>
     )
 }
