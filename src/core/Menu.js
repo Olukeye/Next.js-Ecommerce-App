@@ -18,11 +18,11 @@ const Menu = ({history}) => {
     return(
         <div className="row" >
             <div className="col-md-12">
-                    <Navbar bg="dark" float="left" variant="dark" className="fixed-top" expand="lg" sticky="top">
-                        <Navbar.Brand  className="" href="#home">VEVI</Navbar.Brand>
+                    <Navbar bg="dark"  variant="dark" className="fixed-top" expand="lg" sticky="top-">
+                        <Navbar.Brand  className="" href="/">VEVI</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className="ml-auto">
+                            <Nav className="ml-auto ml-5">
                             <Nav.Link style={isActive(history,'/')} href="/"><i className="fas fa-home"></i></Nav.Link>
 
                             {/* if is not admin, redirect to its profile/dashboard */}
@@ -37,8 +37,8 @@ const Menu = ({history}) => {
 
                             {!isAuthenticated() && (
                                 <Fragment>
-                                    <Nav.Link style={isActive(history, '/signin')} href="/signin">Signin</Nav.Link>
-                                    <Nav.Link style={isActive(history, '/signup')} href="/signup">Signup</Nav.Link>
+                                    <Nav.Link style={isActive(history, '/signin')} href="/signin">LOGIN</Nav.Link>
+                                    <Nav.Link style={isActive(history, '/signup')} href="/signup">REGISTER</Nav.Link>
                                 </Fragment>
                             )}
 
@@ -48,7 +48,7 @@ const Menu = ({history}) => {
                                         signout(() => { history.push("/"); }) }>Signout</span>
                                 </li>
                             )} 
-                             <Nav.Link style={isActive(history,'/shop')} href="/shop">Store</Nav.Link>
+                            <Nav.Link style={isActive(history,'/shop')} href="/shop">SHOP</Nav.Link>
                             <Nav.Link style={isActive(history,'/cart')} href="/cart"><i className="fa fa-shopping-cart"></i>{totalItem()}</Nav.Link>
                             {/* <NavDropdown title="Category"  id="basic-nav-dropdown">
                                 <NavDropdown.Item  href="/shop">Shop</NavDropdown.Item>

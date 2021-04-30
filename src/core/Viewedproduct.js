@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Card from './Card'
 import Images from './Images'
 
-const Viewedproduct = (props, { showViewedProductButton = true}) => {
+const Viewedproduct = (props, { showViewedProductButton = false}) => {
     const [ product, setProduct ] = useState({});
     const [ relatedProduct, setRelatedProduct ] = useState([]);
     const [ error, setError ] = useState(false);
@@ -32,7 +32,7 @@ const Viewedproduct = (props, { showViewedProductButton = true}) => {
     useEffect(() => {
         const productId = props.match.params.productId;
         singleViewed(productId);
-    }, []);
+    }, [props]);
     
     const cartButton = () => {
         return (
