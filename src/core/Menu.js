@@ -50,13 +50,6 @@ const Menu = ({history}) => {
                             )} 
                             <Nav.Link style={isActive(history,'/shop')} href="/shop">SHOP</Nav.Link>
                             <Nav.Link style={isActive(history,'/cart')} href="/cart"><i className="fa fa-shopping-cart"></i>{totalItem()}</Nav.Link>
-                            {/* <NavDropdown title="Category"  id="basic-nav-dropdown">
-                                <NavDropdown.Item  href="/shop">Shop</NavDropdown.Item>
-                                <NavDropdown.Item  href="#action/3.2">Men</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Women</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                            </NavDropdown> */}
                             </Nav>
                             </Navbar.Collapse>
                     </Navbar>
