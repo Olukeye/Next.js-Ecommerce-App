@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Profile = () => {
 
-    const {user: { name, email, role}} = isAuthenticated();
+    const {user: { _id, name, email, role}} = isAuthenticated();
 
     const userLink = () => {
         return (
@@ -17,7 +17,7 @@ const Profile = () => {
                         <Link className="nav-link" to="/cart">Cart</Link>
                     </li>
                     <li className="list-group-item">
-                        <Link className="nav-link" to="profile/update">Edit</Link>
+                        <Link className="nav-link" to={`editProfile/${_id}`}>Edit Profile</Link>
                     </li>
                 </ul>
             </div>
