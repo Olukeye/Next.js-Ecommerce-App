@@ -1,6 +1,4 @@
-
 import { API } from '../config';
-
 
 export const read = (userId, token) => {
     return fetch(`${API}/user/${userId}`, {
@@ -18,8 +16,6 @@ export const read = (userId, token) => {
         console.log(err);
     })
 }
-
-
 
 export const update = (userId, token, user)=> {
    
@@ -43,7 +39,7 @@ export const update = (userId, token, user)=> {
 export const updateUser = (user, next) => {
     if(typeof window !== 'undefined') {
         if(localStorage.getItem("jwt")) {
-            let auth = localStorage.getItem("jwt");
+            let auth = JSON.parse(localStorage.getItem("jwt"));
             auth.user = user;
             localStorage.setItem("jwt", JSON.stringify(auth));
             next()
