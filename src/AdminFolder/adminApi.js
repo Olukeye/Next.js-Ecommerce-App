@@ -2,22 +2,21 @@ import { API } from "../config"
 
 
 // method for admin API
-export const createCategory = (userId, token, category)=> {
+export const createCategory = (userId, token, category) => {
     return fetch(`${API}/category/create/${userId}`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`
+            Accept: "application/json",
+            'Content-Type' : 'application/json',
+            Authorization : `Bearer ${token}`
         },
         body: JSON.stringify(category)
     })
     .then(response => {
-        return response.json()
+        return response.json();
     })
-    .catch(err => {
-        console.log(err)
-    });
+    .catch(err => 
+        console.log(err));
 };
 
 
@@ -38,7 +37,7 @@ export const createProduct = (userId, token, product)=> {
     })
     // ... and if we get an error, it catch and log it out !
     .catch(err => {
-        console.log(err);
+        console.log(err)
     });
 };
 

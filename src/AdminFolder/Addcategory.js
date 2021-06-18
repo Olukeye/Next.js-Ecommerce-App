@@ -2,38 +2,38 @@ import React, {useState} from 'react';
 import Layout from '../core/Layout';
 import {isAuthenticated} from '../auth';
 import { Link } from 'react-router-dom';
-import {  createCategory } from './adminApi';
+import { createCategory } from './adminApi';
 
 
 const Category = () => {
-    const [name, setName] = useState('')
-    const [error, setError] = useState(false)
-    const [success, setSuccess] = useState(false)
+    const [name, setName] = useState("");
+    const [error, setError] = useState(false);
+    const [success, setSuccess] = useState(false);
 
     // distructure
     const {user, token} = isAuthenticated();
 
-    const handleChange = (e) => {
+    const handleChange = e => {
         setError('')
         setName(e.target.value)
     }
 
 // handle submit button
-    const clickSubmit = (e) => {
-        e.preventDefault();
-        setError("");
-        setSuccess(false);
-        // make request to API to create category 
-        createCategory(user._id, token, {name}).then(data => {
-            if(data.error) {
-                setError(true);
-            } else {
-                setError("");
-                setSuccess(true);
-            };
-        });
-    };
+const clickSubmit = e => {
+    e.preventDefault();
+    setError("");
+    setSuccess(false);
 
+    // make request to api to create category
+    createCategory(user._id, token, { name }).then(data => {
+        if (data.error) {
+            setError('');
+        } else {
+            setError("");
+            setSuccess(true);
+        }
+    });
+};
 
     const CategoryForm = () => (
         <form onSubmit={clickSubmit}>

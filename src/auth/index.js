@@ -1,6 +1,6 @@
 import {API} from '../config'
 
-// register user method ti the backend
+// register user  to the backend
 export const signup = user => {
     return fetch(`${API}/signup`, {
         method: 'POST',
