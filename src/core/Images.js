@@ -6,7 +6,7 @@ const Images = ({item, url}) => (
     <div className="product_img">
         <img src={`${API}/${url}/photo/${item._id}`}
         alt={item.name} className="mb-3" 
-        style={{maxHeight:'75%', maxWidth:'100%'}} />
+        style={{maxHeight:'50%', maxWidth:'50%'}} />
     </div>
 )
 
