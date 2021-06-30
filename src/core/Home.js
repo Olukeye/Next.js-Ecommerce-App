@@ -40,7 +40,7 @@ useEffect(() => {
 
 
   return (
-    <Layout title='Home Page' description='Fashion Store' className="container">
+    <Layout title='' description='Fashion Store' className="container">
       <Search />
     <h2 className="mb-4">Best Sales</h2>
     <hr/>

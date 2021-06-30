@@ -84,7 +84,7 @@ const Shop = () => {
      };
 
     return (
-        <Layout title='Home Page' description='Fashion Store' className="container-fluid">
+        <Layout title='Shop' description='' className="container-fluid">
          <div className="row">
          <div className="col-4 mb-4">
                  <ul>

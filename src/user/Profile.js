@@ -50,7 +50,7 @@ const Profile = () => {
 
     return  (
 
-        <Layout title='Profile Page' 
+        <Layout title='' 
         description= {`hello ${name}`}
         className='container-fluid'
         >

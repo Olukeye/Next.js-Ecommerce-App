@@ -39,8 +39,8 @@ const AdminProfile = () => {
 
     return  (
 
-        <Layout title='Profile Page' 
-        description= {`hello ${name}`}
+        <Layout title='' 
+        description= {`Hello ${name}`}
         className='container'
         >
             <div className="row">
