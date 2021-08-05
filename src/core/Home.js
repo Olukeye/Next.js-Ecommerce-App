@@ -40,14 +40,14 @@ useEffect(() => {
 
 
   return (
-    <Layout title='' description='' className="container-fluid">
+    <Layout title='' description='' className="container">
       <Search />
     <h2 className="mb-4">Best Sales</h2>
     <hr/>
       <br/>
-    < div className="row ">
+    < div className="row justify-content-md-center">
     {productsBySell.map((product, i) => (
-      <div  key={i} className="col-4 mb-4">
+      <div  key={i} className="col-md-4 ml-auto mb-4">
         <Card  product={product} />
       </div>
     ))}
@@ -60,7 +60,7 @@ useEffect(() => {
   <br/>
     < div className="row">
     {productsByArrival.map((product, i) => (
-       <div  key={i}  className="col-4 mb-4">
+       <div  key={i}  className="col-md-4 ml-auto mb-4">
        <Card product={product} />
      </div>
     ))}

@@ -85,8 +85,8 @@ const Shop = () => {
 
     return (
         <Layout title='Shop' description='' className="container-fluid">
-         <div className="row">
-         <div className="col-4 mb-4">
+         <div className="row justify-content-md-center">
+         <div className="col-md-4 ml-auto mb-4">
                  <ul>
                  <Checkbox categories={categories} handleFilters={filters => handleFilters(filters, 'category')} />
                  </ul>
@@ -94,7 +94,7 @@ const Shop = () => {
               <div className="col-8">
                   <div className="row">
                      {filteredResults.map((product, i) => (
-                         <div key={i} className="col-4 mb-3">
+                         <div key={i} className="col-md-4 ml-auto mb-3">
                             <Card key={i} product={product} />
                          </div>
                      ))}
