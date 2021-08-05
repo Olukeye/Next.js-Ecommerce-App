@@ -92,7 +92,7 @@ const Card = (
     <div className="container">
             {shouldRedirect(redirect)}
         <div className="row">
-                <div className="product-grid">
+                <div className="product-grid ">
                     <div className="product-image">
                         <Link to="#">
                         <Images item={product} url="product" className="pic-1"/>

@@ -24,7 +24,7 @@ h3.h3 {
 }
 .product-grid .product-image img {
   width: 100%;
-  height: auto;
+  height:fit-content;
 }
 .product-grid .pic-1 {
   opacity: 1;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Layout from './Layout'
 import {  getProducts } from './apiCore';
 import Card from './Card';
-import './card.css';
+// import './card.css';
 import Search from './Search';
 
 
@@ -45,7 +45,7 @@ useEffect(() => {
     <h2 className="mb-4">Best Sales</h2>
     <hr/>
       <br/>
-    < div className="row">
+    < div className="row ">
     {productsBySell.map((product, i) => (
       <div  key={i} className="col-4 mb-4">
         <Card  product={product} />

@@ -16,7 +16,7 @@ const Menu = ({history}) => {
         }
     };
     return(
-        <div className="row" >
+        <div className="row container" >
             <div className="col-md-12">
                     <Navbar bg="dark"  variant="dark" className="fixed-top" expand="lg" sticky="top-">
                         <Navbar.Brand  className="" href="/">VEVI</Navbar.Brand>
