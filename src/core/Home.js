@@ -40,7 +40,7 @@ useEffect(() => {
 
 
   return (
-    <Layout title='' description='Fashion Store' className="container-fluid">
+    <Layout title='' description='' className="container-fluid">
       <Search />
     <h2 className="mb-4">Best Sales</h2>
     <hr/>

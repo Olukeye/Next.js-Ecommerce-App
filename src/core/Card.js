@@ -99,12 +99,10 @@ const Card = (
                         </Link>
                         <ul className="social">
                             <li>{showViewedButton(showViewedProductButton)}</li>
-                            <li ><Link to="#" data-tip="Add to Wishlist"><i className="fa fa-shopping-bag"></i></Link></li>
                             <li>{ cartButton( showAddToCartButton)}</li>
                         </ul>
-                        <span className="product-new-label">Sale</span>
                     </div>
-                    <ul className="rating mb-2">
+                    <ul className="rating mb-3">
                         <li className="fa fa-star"></li>
                         <li className="fa fa-star"></li>
                         <li className="fa fa-star"></li>
