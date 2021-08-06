@@ -48,7 +48,7 @@ const Card = (
 
     const stock = (quantity) => {
         return quantity > 0 ? (
-            <span className="badge badge-secondary badge-pill">Avalaible</span>
+            <span className="badge badge-secondary badge-pill">Available</span>
         ) : (
             <span className="badge badge-secondary badge-pill">Off stock</span>
 
