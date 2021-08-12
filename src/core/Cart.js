@@ -13,7 +13,7 @@ const Cart = ( ) => {
 
     useEffect(() => {
         setItems(getCart())
-    }, [{items}]);
+    }, [items]);
 
     const showCartItems = items => {
         return (
