@@ -84,14 +84,14 @@ const Shop = () => {
      };
 
     return (
-        <Layout title='Shop' description='' className="container-fluid">
+        <Layout title='Shop' description='' className="container">
          <div className="row justify-content-md-center">
          <div className="col-md-4 ml-auto mb-4">
                  <ul>
                  <Checkbox categories={categories} handleFilters={filters => handleFilters(filters, 'category')} />
                  </ul>
              </div>
-              <div className="col-8">
+              <div className="">
                   <div className="row">
                      {filteredResults.map((product, i) => (
                          <div key={i} className="col-md-4 ml-auto mb-3">

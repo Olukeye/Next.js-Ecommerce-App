@@ -40,7 +40,7 @@ useEffect(() => {
 
 
   return (
-    <Layout title='' description='' className="container">
+    <Layout title='' description='Home of the best  Nigerian online native fabrics'  className="container">
       <Search />
     <h2 className="mb-4">Best Sales</h2>
     <hr/>
