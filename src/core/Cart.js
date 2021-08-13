@@ -3,19 +3,19 @@ import Layout from './Layout'
 import {getCart } from './cartHelpers';
 import { Link} from 'react-router-dom';
 import Card from './Card';
-import Checkout from './Checkout'
+// import Checkout from './Checkout'
 
 
 
 
-const Cart = ( ) => {
+const Cart = () => {
     const [items, setItems] = useState([])
 
     useEffect(() => {
         setItems(getCart())
     }, [{items}]);
 
-    const showCartItems = items => {
+    const showCartItems = (items) => {
         return (
             <div>
                 <h2>You have {`${items.length}`} item in your cart</h2>
@@ -49,7 +49,7 @@ const Cart = ( ) => {
             <div className="col-4">
                 <h4 className="">your checkOut</h4>
                 <hr/>
-                <Checkout products={items} />
+                {/* <Checkout products={items} /> */}
             </div>
         </div>
         </Layout>

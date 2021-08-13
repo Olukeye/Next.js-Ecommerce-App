@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-right col-md-4 ml-auto ">
-          <h2> Company<span> VEVI</span></h2>
+          <h2> Company<span> vevi </span></h2>
           <p className="menu">
             <a href="/"> Home</a> |
             <a href="#"> About</a> |
@@ -42,7 +42,7 @@ const Footer = () => {
             <a href="/shop">Shop</a> |
             <a href="#"> Contact</a>
           </p>
-          <p className="name"> Company Name &copy; 2016</p>
+          <p className="name"> VEVI &copy; 2016</p>
         </div>
       </footer>
     )

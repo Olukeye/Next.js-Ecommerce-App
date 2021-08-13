@@ -18,7 +18,7 @@ const Checkout = ({products}) => {
     const token = isAuthenticated() && isAuthenticated().token
 
     const getToken = (userId, token) => {
-        getBraintreeClientToken(userId, token).then(data => {
+        getBraintreeClientToken(userId, token).then(data, () => {
             if(data.error){
                 setData({...data, error: data.error})
             } else {

@@ -16,6 +16,7 @@ product image on card
 }
 
 .jumbotron {
+  text-align-last:auto;
   width: 30wh;
   height:30vh;
   color: #fff;
