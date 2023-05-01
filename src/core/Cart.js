@@ -9,13 +9,13 @@ import Card from './Card';
 
 
 const Cart = () => {
-    const [items, setItems] = useState([])
+    const [items, setItems] = useState(false)
 
     useEffect(() => {
         setItems(getCart())
-    }, []);
+    }, [!items]);
 
-    const showCartItems = (items) => {
+    const showCartItems = items => {
         return (
             <div>
                 <h2>You have {`${items.length}`} item in your cart</h2>

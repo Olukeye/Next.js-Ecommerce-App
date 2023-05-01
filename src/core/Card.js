@@ -80,11 +80,12 @@ const Card = (
     }
 
     const showDeleteButton = deleteButton => {
-        return deleteButton  && (
+        return (deleteButton  && (
             <button 
-            onClick={() => deleteItem(product._id)}
-            ></button>
-        )
+                onClick={() => deleteItem(product._id)}
+                className='btn btn-outline-danger mt-2 mb-2'
+            >Delete item</button>
+        ))
     }
 
     return (
