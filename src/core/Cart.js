@@ -40,14 +40,14 @@ const Cart = () => {
        </h2>
     )
     return (
-        <Layout title='Shopping Cart' description='Your Cart is Ready' className="container">
+        <Layout title='' description='Your Cart' className="container">
         <div className="row">
             <div className="col-8 mb-4">
                 {items.length > 0 ? showCartItems(items) : emptyCart()}
             </div>
         
             <div className="col-4">
-                <h4 className="">your checkOut</h4>
+                <h4 className="">Check Out</h4>
                 <hr/>
                 {/* <Checkout products={items} /> */}
             </div>

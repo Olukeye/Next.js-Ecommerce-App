@@ -86,7 +86,7 @@ const Signup = () => {
     )
     
     return (
-        <Layout title='Signup Page' description='Signup to E-commerce Node-React App'
+        <Layout title='' description='Signup'
          className='container col-md-6 offset-md-3'>
              
             {errorMessage()}
