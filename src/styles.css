@@ -16,9 +16,9 @@ product image on card
 }
 
 .jumbotron {
-  text-align-last:auto;
+  text-align-last: auto;
   width: 30wh;
-  height:30vh;
+  height: 30vh;
   color: #fff;
   background: linear-gradient(-45deg, #16222a, #3a6073, #190a05, #373b44);
   background-size: 400% 400%;
@@ -31,9 +31,11 @@ product image on card
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -43,9 +45,11 @@ product image on card
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -55,9 +59,11 @@ product image on card
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }

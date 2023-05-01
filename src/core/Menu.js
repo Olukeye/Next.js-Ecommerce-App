@@ -17,7 +17,7 @@ const Menu = ({history}) => {
     };
     return(
         <div className="row container" >
-            <div className="col-md-12">
+            <div className="col-md-12 mt-3">
                     <Navbar bg="dark"  variant="dark" className="fixed-top" expand="lg" sticky="top-">
                         <Navbar.Brand  className="" href="/">VEVI</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />

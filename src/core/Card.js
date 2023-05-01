@@ -100,7 +100,7 @@ const Card = (
                         </Link>
                         <ul className="social">
                             <li>{showViewedButton(showViewedProductButton)}</li>
-                            <li>{ cartButton( showAddToCartButton)}</li>
+                            <li>{cartButton(showAddToCartButton)}</li>
                         </ul>
                     </div>
                     <ul className="rating mb-3">
@@ -114,8 +114,8 @@ const Card = (
                         <h3 className="title"><Link to="#">{product.description.substring(0, 50)}</Link></h3>
                         <div className="price">${product.price}
                             <span>{stock(product.quantity)}</span>
-                            <h6>{showCartUpdate( cartUpdate)}<span>
-                            { showDeleteButton(deleteButton )}</span></h6>
+                            <h6>{showCartUpdate(cartUpdate)}<span>
+                            {showDeleteButton(deleteButton)}</span></h6>
                         </div>
                     </div>
                 </div>
