@@ -32,7 +32,6 @@ const Cart = () => {
     }
 
     
-
     const emptyCart = () => (
         <h2>
             You do not have item.<br/> 
